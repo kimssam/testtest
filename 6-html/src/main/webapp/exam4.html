@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 입력 내용을 감싸는 태그 -->
+	<form action="" method="post">
+		<!-- 입력 내용에 대한 그룹을 명시하는 부분 -->
+		<fieldset>
+			<!-- 그룹의 제목 -->
+			<legend>내용 입력하기</legend>
+			<!-- 입력 태그 -->
+			<div>
+				<label>아이디</label>
+				<input type="text" name="user_id" maxlength="20">
+			</div>
+			<div>
+				<label>회원이름</label>
+				<input type="text" name="user_name" maxlength="20">
+			</div>
+			<div>
+				<label>비밀번호</label>
+				<input type="password" name="user_pw" maxlength="20">
+			</div>
+			<div>
+				<label>자기소개</label>
+				<textarea rows="3" cols="30" name="memo"></textarea>
+			</div>
+			<div>
+				<label>숨겨진 항목</label>
+				<input type="hidden" name="data" value="숨겨진 데이터">
+			</div>
+		</fieldset>
+		<div>
+			<input type="submit" value="전송">
+			<input type="reset" value="취소">
+		</div>
+	</form>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function printTime() {
+		// 현재시간 읽기
+		var days = ["일", "월", "화", "수", "목", "금", "토"];
+		var mydate = new Date();	// 현재시간 읽어옴	
+		
+		var yy = mydate.getFullYear();
+		var mm = mydate.getMonth() + 1;
+		var dd = mydate.getDate();
+		var i = mydate.getDay();   // 요일수
+		var day = days[i];
+		var hh = mydate.getHours();
+		var mi = mydate.getMinutes();
+		var ss = mydate.getSeconds();
+		
+		var result = yy + "-" + mm + "-" + dd + " " + day + "요일 "
+				   + hh + ":" + mi + ":" + ss;	
+		document.getElementById("result").innerHTML = result;
+		//document.write(result);
+	}
+	function startTimer() {
+		// setInterval(함수명, 시간(ms)) : 정해진 시간마다 함수를 호출함
+		setInterval(printTime, 1000);
+	}
+</script>
+</head>
+<body onload="startTimer()">
+	<h1 id="result"></h1>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">   
+   function image1() {   
+      var img = document.getElementById("fruitImg"); 
+      img.src = "media/banana.png";
+   }
+   function image2() {   
+      var img = document.getElementById("fruitImg"); 
+      img.src = "media/mango.png";
+   }
+   function image3() {   
+      var img = document.getElementById("fruitImg"); 
+      img.src = "media/apple.png";
+   }
+   function image(filePath) { 
+	   //alert(filePath);
+	  var img = document.getElementById("fruitImg1"); 
+	  img.src = "media/" + filePath + ".png";
+   }
+</script>
+</head>
+<body onload="Image()">
+   <h1>라디오 버튼을 클릭하면 이미지를 출력합니다.</h1>
+   <form action="">
+	   <input type="radio" name="fruit" value="banana" 
+	   		onclick="image1()" checked="checked">바나나
+	   <input type="radio" name="fruit" value="mango" 
+	   		onclick="image2()">망고
+	   <input type="radio" name="fruit" value="apple" 
+	   		onclick="image3()">사과
+   </form>
+   <br><br> 
+
+   <img src="media/banana.png" id= "fruitImg" width="100" height="120">
+   <hr><br><br>
+   
+   <h1>라디오 버튼을 클릭하면 이미지를 출력합니다.</h1>
+   <input type="radio" name="fruit1" value="banana" 
+   		onclick="image(this.value)" checked="checked">바나나
+   <input type="radio" name="fruit1" value="mango" 
+   		onclick="image(this.value)">망고
+   <input type="radio" name="fruit1" value="apple" 
+   		onclick="image(this.value)">사과
+   <br><br>
+
+   <img src="media/banana.png" id= "fruitImg1"  width="100" height="120">
+   
+</body>
+</html>

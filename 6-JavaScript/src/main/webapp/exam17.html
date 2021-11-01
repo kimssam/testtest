@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function insertQuestion() {
+		var q = prompt("사칙연산의 수식을 입력하세요. (예: 100+50)");
+		var answer = eval(q);
+		document.getElementById("question").innerHTML = q + " = " + answer;
+	}
+</script>
+</head>
+<!-- onload : 페이지가 처음 열렸을 때, 브라우저는 모든 태그를 읽어서 태그를 인식하게 되는데,
+			  브라우저가 태그를 모두 인식한 후, 태그를 번역한 다음 
+			  발생되는 이벤트 속성이 onload이다.
+ -->
+<body onload="insertQuestion()">
+	<h1 id="question"></h1>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>formEventEx</title>
+
+<style type="text/css">
+fieldset {
+   width: 350px;
+   border: grey 1px solid;
+   margin: 0 auto;
+}
+body h3 {text-align: center;}
+label {
+	display:inline-block;     
+   	width: 150px; 
+   	height: 15px;
+   	text-align: left;
+   	margin-bottom: 5px;
+}
+
+input {
+	display:inline-block;
+    width: 330px; 
+    height: 15px;
+    margin-bottom: 5px;      
+}
+
+#gender input {
+	display:inline-block;
+    width: 20px; 
+    margin-left: 0px;
+}
+#gender label {
+	display:inline-block;
+    width: 50px; 
+    margin-left: 0px;
+}
+
+label.chk {
+	display:inline-block;
+    width: 50px; 
+    margin-left: 0px;
+}
+
+input[type="checkbox"] {
+	display:inline-block;
+    width: 15px; 
+    margin-left: 0px;
+}
+
+#register {
+   width:330px;
+   height: 25px;
+   margin-bottom: 5px;
+   margin-top: 10px;
+   background-color: rgb(184, 161, 107);
+   color: white;
+   border: none;  
+}
+#renew {
+   width:330px;
+   height: 25px;
+   background-color: white;
+   color: rgb(184, 161, 107);
+   border: rgb(184, 161, 107) 1px solid;
+}
+</style>
+
+<script type="text/javascript">
+function doSubmit() {   
+   if(!frm.id.value) {
+      alert('아이디를 입력해주세요');
+      frm.id.focus();   
+      return false;   
+   }
+   
+   if(!frm.pw.value) {
+      alert('비밀번호를 입력해주세요');
+      frm.pw.focus();   
+      return false;   
+   }
+   
+   if(!frm.idNo.value) {
+      alert('주민번호를 입력해주세요');
+      frm.idNo.focus();   
+      return false;   
+   }
+   
+   if(!frm.gender[0].checked && !frm.gender[1].checked) {
+      alert("성별을 선택해 주세요.");
+      frm.gender[0].focus();
+      return false;
+   }
+   
+   if(!frm.email.value) {
+      alert('이메일 주소를 입력해주세요');
+      frm.email.focus();   
+      return false;   
+   }
+   
+   if(!frm.url.value) {
+      alert('URL을 입력해주세요');
+      frm.url.focus();   
+      return false;   
+   }
+   
+   if(!frm.phoneNumber.value) {
+      alert('핸드폰번호를 입력해주세요');
+      frm.phoneNumber.focus();   
+      return false;   
+   }
+   
+   var chk = false;
+   for(var i=0; i<frm.hobbies.length; i++) {
+      if(frm.hobbies[i].checked) {
+         chk = true;
+         break;
+      }
+   }
+   if(!chk) {
+      alert("취미를 선택해 주세요.");
+      frm.hobbies[0].focus();
+      return false;
+   }
+   
+   if(frm.job.selectedIndex < 1) {
+      alert("직업을 선택해 주세요");
+      frm.job.focus();
+      return false;
+   }
+   
+   if(confirm("입력하신 내용이 맞습니까?")) {
+      frm.submit();
+   }
+}
+</script>
+
+</head>
+<body>
+
+<h3>회원가입</h3>
+
+<form method="get" action="" name="frm" onsubmit="doSubmit(); return false;">
+   <fieldset>
+      <div>
+         <label for="id">아이디</label>
+         <input type="text" id="id" name="id">
+      </div>      
+      
+      <div>
+         <label for="pw">비밀번호</label>
+         <input type="password" id="pw" name="pw">
+      </div>
+
+      <div>
+         <label for="idNo">주민번호</label>
+         <input type="password" id="idNo" name="idNo">
+      </div>
+
+      <div id="gender">
+         <label>성별</label><br>
+         <input type='radio' name='gender' value='male' id="male"> 
+         <label class="select" for="male">남자</label>
+         <input type='radio' name='gender' value='female' id="female"> 
+         <label class="select" for="female">여자</label>
+      </div>
+      
+      <div>
+         <label>이메일 주소</label>
+         <input type="email" id="email" name="email">
+      </div>
+   
+      <div>
+         <label>URL</label>
+         <input type="url" id="url" name="url">
+      </div>
+      
+      <div>
+         <label>핸드폰번호</label>
+         <input type="text" id="phoneNumber" name="phoneNumber">
+      </div>
+      
+      <div id="mybobbies">
+         <label>취미</label><br>
+         <input type="checkbox" id="hobbies" name="hobbies" value="soccer"> 
+         <label class="chk" for="soccer">축구</label>
+         <input type="checkbox" id="hobbies" name="hobbies" value="basketball"> 
+         <label class="chk" for="basketball">농구</label>
+         <input type="checkbox" id="hobbies" name="hobbies" value="baseball">
+         <label class="chk" for="baseball">야구</label>
+      </div>
+      
+      <div>
+         <label for="job">직업</label><br>
+         <select name="job" id="job" style="width:330px;height:20px;">
+             <option>--선택하세요--</option>
+             <option value="프로그래머">프로그래머</option>
+             <option value="회사원">회사원</option>
+             <option value="기타">기타</option>
+         </select>
+      </div>
+
+
+      <div id="control">
+         <input type="submit" id="register" value="회원가입"><br>
+         <input type="reset" id="renew" value="다시작성" >
+      </div>
+      
+   </fieldset>
+</form>
+
+</body>
+</html>

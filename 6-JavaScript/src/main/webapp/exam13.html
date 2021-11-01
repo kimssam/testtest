@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var str = "ab";
+	//var num = Number(str);  // NaN 저장 : Not a Number
+	
+	document.write(str + "<br>");
+	//document.write(num + "<br>");
+	
+	if(!isNaN(str)) {
+		document.write("문자열이 숫자로 구성되어 있습니다.");
+		var num = Number(str);
+	} else {
+		document.write("문자열이 숫자로 구성되어 있지 않습니다.");
+	}
+</script>
+</head>
+<body>	
+</body>
+</html>

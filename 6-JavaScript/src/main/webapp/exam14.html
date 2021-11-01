@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var user_id = prompt("아이디를 입력하세요.");
+	
+	// 문자열이 저장되어 있을 경우만 동작
+	if(user_id != "" && user_id != null) {
+		alert("안녕하세요. " + user_id + "님");
+		
+		var result = confirm("정말 로그아웃 하시겠습니까?")
+		if(result ) alert("로그아웃 되었습니다.");
+		else alert("로그아웃이 취소되었습니다.")
+	} else {
+		alert("아이디를 입력해 주세요.")
+	}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

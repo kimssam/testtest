@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+fieldset {
+   width: 300px;
+   border: grey 1px solid;
+   margin: 0 auto;
+}
+
+#control {
+   margin-left: 2.5em;
+}
+#control input {
+   margin-right: 1em;
+}
+</style>
+
+<script type="text/javascript">   
+   function doSubmit() {
+      // 폼 객체 얻기 : document.form 태그 이름
+      //var frm = document.frm;
+      
+      // <input type="text"> 태그의 입력 여부 검사
+      //alert("frm.name.value == '' : " + (frm.name.value == ""));
+      //alert("!frm.name.value : " + (!frm.name.value));
+      
+      if(!frm.name.value) {
+         alert('이름을 입력해주세요');
+         frm.name.focus();   // input 태그 안에 커서 이동해라
+         return false;   // 함수 강제 종료
+      }
+      
+      if(!frm.gender[0].checked && !frm.gender[1].checked) {
+         alert("성별을 선택해 주세요.");
+         frm.gender[0].focus();
+         return false;
+      }
+      
+      // select 태그
+      if(frm.job.selectedIndex < 1) {
+         alert("직업을 선택해 주세요");
+         frm.job.focus();
+         return false;
+      }
+      
+      // 체크박스의 선택 여부 검사
+      var chk = false;
+      for(var i=0; i<frm.hobbies.length; i++) {
+         if(frm.hobbies[i].checked) {
+            chk = true;
+            break;
+         }
+      }
+      if(!chk) {
+         alert("취미를 선택해 주세요.");
+         frm.hobbies[0].focus();
+         return false;
+      }
+      
+      // 모든 항목에 입력값이 있으면 -> 데이터 전송
+      if(confirm("입력하신 내용이 맞습니까?")) {
+         frm.submit();
+      }
+   }
+   
+   function onReset() {
+      alert("리셋 클릭함");
+      var frm = document.frm;
+      frm.reset();
+   }
+
+</script>
+
+</head>
+<body>
+
+<form method="get" action="" name="frm" onsubmit="doSubmit(); return false;">
+   <!-- return false: submit 기능을 무효화! 무효화 안 시키면 alert창 뜨고 form 정보 보냄  -->
+   <fieldset>
+      <legend>회원가입</legend>
+
+      <div>
+         <label for="name">이름</label>
+         <input type="text" id="name" name="name">
+      </div>
+
+      <div>
+         <label>성별</label>
+         <input type='radio' name='gender' value='male' id="male"/> 
+         <label class="select" for="male">남자</label>
+         <input type='radio' name='gender' value='female' id="female"/> 
+         <label class="select" for="female">여자</label>
+      </div>
+
+      <div>
+         <label for="job">직업</label>
+         <select name="job" id="job">
+             <option>--선택하세요--</option>
+             <option value="학생">학생</option>
+             <option value="회사원">회사원</option>
+             <option value="기타">기타</option>
+         </select>
+      </div>
+
+      <div>
+         <label>취미</label>
+         <input type="checkbox" id="hobbies" name="hobbies" value="soccer"> 축구
+         <input type="checkbox" id="hobbies" name="hobbies" value="basketball"> 농구
+         <input type="checkbox" id="hobbies" name="hobbies" value="baseball"> 야구
+      </div>
+      
+      <div id="control">
+         <input type="submit" id="submit" value="제출">
+         <input type="button" id="reset1" value="리셋" onclick="onReset()">
+         <input type="reset" id="reset1" value="리셋">
+      </div>
+   </fieldset>
+</form>
+
+
+</body>
+</html>

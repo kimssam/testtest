@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function sum(x, y) {
+		return x+y;
+	}
+	function printResult() {
+		//alert("printResult 호출");
+		// document.getElementById("아이디") : 아이디가 일치하는 태그 가져오기
+		var span = document.getElementById("result");
+		var num1 = document.getElementById("num1");
+		var num2 = document.getElementById("num2");
+
+		// innerHTML : 태그의 데이터 영역을 관리하는 변수
+		span.innerHTML = sum(Number(num1.innerHTML), Number(num2.innerHTML));
+	}
+</script>
+</head>
+<body>
+	<h1>
+		<span id = "num1">10</span> + 
+		<span id = "num2">50</span> = 
+		<span id = "result">?</span>
+	</h1>
+
+	<input type="button" value="결과보기" onclick="printResult()">
+	<!-- onclick="자바스크립트 명령어(일반적으로 함수 호출)" -->
+</body>
+</html>

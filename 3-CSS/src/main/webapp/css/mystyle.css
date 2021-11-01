@@ -1,0 +1,18 @@
+@charset "UTF-8";
+body {
+   background: mistyrose;
+   /*margin : 0 80px;*/
+   margin-left: 80px;
+   margin-right: 80px;   
+}
+h3 {
+   color: red;
+   text-align: center;
+}
+hr {
+   border: 1px solid gray;
+}
+p {
+   color: purple;
+   font-size: 16px;
+}

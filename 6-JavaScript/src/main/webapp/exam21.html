@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr1 = new Array("홍길동", "자바스크립트", "강사");
+	var arr2 = ["홍길동", "자바스크립트", "강사"];
+
+	document.write("<span>" + arr1[0] + "</span><br>")
+	document.write("<span>" + arr1[1] + "</span><br>")
+	document.write("<span>" + arr1[2] + "</span><br><hr>")
+	
+	arr1[3] = "이영희";
+	arr1[4] = "김철수";
+	
+	for(var i=0; i<arr1.length; i++) {
+		document.write("<span>" + arr1[i] + "</span><br>")
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

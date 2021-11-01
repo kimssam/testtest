@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 외부 자바스크립트 파일 참조 -->
+<script type="text/javascript" src="calc.js"></script>
+<script type="text/javascript">
+	// window.onload = function() {} : <body onload="함수호출">와 같은 동작
+	
+	/*
+	// 객체 사용법
+	document.write("<h1>calc.js</h1>")
+	calc.setValue(100, 50);
+	calc.result();
+	document.write("<hr>");
+	
+	calc2.setValue(200, 100);
+	calc2.result();
+	document.write("<hr>");
+	
+	calc2.x = 500;
+	calc2.y = 700;
+	calc2.result();
+	*/	
+	function func1() {
+		calc.setValue(100, 50);		
+		var r1 = document.querySelector('#answerPlus');	
+		r1.innerHTML = calc.plus();
+		
+		var r1 = document.querySelector('#answerMinus');
+		r1.innerHTML = calc.minus();
+		///////////////////////////////////
+		calc.setValue(200, 100);		
+		var r1 = document.querySelector('.answerPlus');
+		r1.innerHTML = calc.plus();
+		
+		var r1 = document.querySelector('.answerMinus');
+		r1.innerHTML = calc.minus();
+	}
+</script>
+</head>
+<body>
+	<p>100 + 50 = <span id="answerPlus">?</span></p>
+	<p>100 - 50 = <span id="answerMinus">?</span></p>		
+	<p>200 + 100 = <span class="answerPlus">?</span></p>
+	<p>200 - 100 = <span class="answerMinus">?</span></p>
+	<input type="button" value="결과보기" onClick="func1()">
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>회원가입</title>
+	<link rel="stylesheet" href="formStyle.css">
+</head>
+<body>
+	<h1 class="title">회원가입</h1>
+	<div id="wrapper">
+		<div class="left">
+			<form action="member_join.jsp"  method="get">
+				<h2>hello!</h2>
+				<input type="text" placeholder="회원ID" name="id"><br>
+				<input type="text" placeholder="이름" name="name"><br>
+				<input type="password" placeholder="비밀번호" name="pw"><br>
+				<input type="text" placeholder="생년월일" name="birthD"><br>
+				<div id="gender">
+					<label>성별</label>
+					<input type="radio" id="male" name="gender" checked>
+					<label for="male">남자</label>
+					<input type="radio" id="female" name="gender">
+					<label for="female">여자</label>
+				</div>	
+				<input type="tel" placeholder="핸드폰번호(-포함입력)" name="cellNum" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"><br>
+				<input type="email" placeholder="이메일" name="email"><br>
+				<input type="submit" value="확인">
+				<input type="reset"  value="취소">
+			</form>
+		</div>
+		<div class="right t_white">
+			<h2>glad to see you!</h2>
+			<br>
+			<p>환영합니다.</p>
+			<p class="t_small">11번가의 다양한 서비스를 만나보세요!</p>
+		</div>
+	</div>
+</body>
+</html>
